@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betting Arbitrage Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trophy-icon">
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5h.128A2 2 0 0 1 6 2h12a2 2 0 0 1 1.372 2H19.5a2.5 2.5 0 0 1 0 5H18"></path>
+          <path d="M6 9a9 9 0 0 0 9 9 9 9 0 0 0 9-9M6 9v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9"></path>
+        </svg>
+        <h1>Arbitrage Pro</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Guide</a></li>
+          <li><a href="#">Calculators</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="calculator-header">
+        <h2>Betting Arbitrage Calculator</h2>
+        <p>Find profitable arbitrage opportunities across different bookmakers and guarantee a profit regardless of the outcome.</p>
+      </div>
+
+      <div class="calculator-grid">
+        <div class="calculator-main">
+          <div class="calculator-card">
+            <div class="card-header">
+              <div class="header-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="2"></rect>
+                  <path d="M12 8v8m-4-4h8"></path>
+                </svg>
+                <h3>Calculate Arbitrage</h3>
+              </div>
+              <div class="odds-format-selector">
+                <button data-format="decimal" class="active">Decimal</button>
+                <button data-format="fractional">Fractional</button>
+                <button data-format="american">American</button>
+              </div>
+            </div>
+
+            <div class="calculator-body">
+              <div class="investment-input">
+                <label>Total Investment ($)</label>
+                <input type="number" id="investment" value="100" min="1">
+              </div>
+
+              <div id="bookmakers-container">
+                <!-- Bookmaker inputs will be added here -->
+              </div>
+
+              <div class="calculator-actions">
+                <button id="add-bookmaker" class="text-button">
+                  <span>+</span> Add Bookmaker
+                </button>
+                <div class="action-buttons">
+                  <button id="reset" class="secondary-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                      <path d="M3 3v5h5"></path>
+                    </svg>
+                    Reset
+                  </button>
+                  <button id="calculate" class="primary-button">Calculate</button>
+                </div>
+              </div>
+
+              <div id="result-container" class="hidden">
+                <!-- Results will be displayed here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="saved-opportunities">
+          <div class="opportunities-card">
+            <div class="card-header">
+              <h3>Saved Opportunities</h3>
+            </div>
+            <div id="saved-results" class="opportunities-body">
+              <div class="empty-state">
+                <p>No saved opportunities yet.</p>
+                <p class="subtitle">Calculate and save arbitrage opportunities to view them here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h3>How Arbitrage Betting Works</h3>
+        <div class="info-content">
+          <p>Arbitrage betting (also known as "arbing") is a technique where you place bets on all possible outcomes of an event at odds that guarantee a profit, regardless of which outcome occurs.</p>
+          
+          <h4>Key Concepts:</h4>
+          <ul>
+            <li><strong>Implied Probability:</strong> The odds offered by bookmakers represent an implied probability of an outcome occurring.</li>
+            <li><strong>Arbitrage Opportunity:</strong> When the total implied probability across all bookmakers is less than 100%, an arbitrage opportunity exists.</li>
+            <li><strong>Guaranteed Profit:</strong> By betting proportionally on each outcome, you can lock in a profit regardless of the result.</li>
+          </ul>
+          
+          <h4>Using the Calculator:</h4>
+          <ol>
+            <li>Enter your total investment amount</li>
+            <li>Add odds from different bookmakers for all possible outcomes</li>
+            <li>Click "Calculate" to determine if an arbitrage opportunity exists</li>
+            <li>If successful, the calculator will show how much to stake on each outcome</li>
+            <li>Save profitable opportunities for future reference</li>
+          </ol>
+          
+          <div class="warning-note">
+            <p class="warning-title">Important Note:</p>
+            <p>Always check the terms and conditions of bookmakers before placing arbitrage bets. Some bookmakers may void bets or limit accounts if they detect arbitrage betting patterns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Arbitrage Pro</h3>
+          <p>Professional tools for smart bettors.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Calculators</a></li>
+            <li><a href="#">Betting Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Betting Tips</a></li>
+            <li><a href="#">Bookmaker Reviews</a></li>
+            <li><a href="#">Strategies</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Disclaimer</a></li>
+            <li class="warning">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+              Gambling should be done responsibly
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Arbitrage Pro. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
